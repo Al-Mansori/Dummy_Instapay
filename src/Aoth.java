@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import dummy.instapay.AccountType;
 
 public class Aoth {
@@ -12,8 +14,8 @@ public class Aoth {
         int tmp;
 
         System.out.println("Chose 1 or 2");
-        
-        
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
        
 
 
