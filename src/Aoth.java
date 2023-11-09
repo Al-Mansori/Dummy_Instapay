@@ -1,27 +1,22 @@
-import jdk.internal.joptsimple.util.RegexMatcher;
+import dummy.instapay.AccountType;
 
 public class Aoth {
+    
 
-    UserDB userDB;
-    Api api;
 
     public Aoth() {
-        userDB = new UserDB();
-        api = new Api();
-    }
-
-    public User ver1(User u) {
-
-        User i = new User();
-        i = userDB.users[0];
-        return u;
-    }
-
-    public boolean ver2(String phoneNumber) {
-        return true;
+       
     }
 
     public User regestur() {
+        int tmp;
+
+        System.out.println("Chose 1 or 2");
+        
+        
+       
+
+
         User s = new User();
         return s;
     }

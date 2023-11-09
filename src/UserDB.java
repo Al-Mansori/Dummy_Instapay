@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class UserDB {
 
@@ -8,6 +9,10 @@ public class UserDB {
     public UserDB() {
         users = new ArrayList<>();
 
+    }
+
+    public List<User> getUserList() {
+        return users;
     }
 
 }
