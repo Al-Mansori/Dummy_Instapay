@@ -11,15 +11,15 @@ package dummy.instapay;
 public class Wallet extends Account{
 
     public Wallet(){
-        this.activities = new Operations();
+        this.operations = new WalletOperations();
     }
 
-    public Wallet(double balance, int id, String phoneNumber, AccountType accountType) {
-        super(balance, id, phoneNumber, accountType);
+    public Wallet(double balance, String phoneNumber, AccountType accountType) {
+        super(balance, phoneNumber, accountType);
     }
     
     @Override
     public void loadProfile(){
-        System.out.println("ID: "+this.id+"\nPhone Number: "+this.phoneNumber+"\nBalance: "+this.balance+"\nAccount Type: "+this.accountType);
+        System.out.println("Phone Number: "+this.phoneNumber+"\nBalance: "+this.balance+"\nAccount Type: "+this.accountType);
     }
 }

@@ -10,10 +10,9 @@ package dummy.instapay;
  */
 public abstract class Account {
     protected double balance ;
-    protected int id ;
     protected String phoneNumber ;
     protected AccountType accountType ;
-    protected Activities activities ;
+    protected Operations operations ;
     
     public abstract void loadProfile();
     
@@ -21,9 +20,8 @@ public abstract class Account {
         
     }
 
-    public Account(double balance, int id, String phoneNumber, AccountType accountType) {
+    public Account(double balance, String phoneNumber, AccountType accountType) {
         this.balance = balance;
-        this.id = id;
         this.phoneNumber = phoneNumber;
         this.accountType = accountType;
     }
@@ -34,14 +32,6 @@ public abstract class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getPhoneNumber() {
@@ -60,12 +50,13 @@ public abstract class Account {
         this.accountType = accountType;
     }
 
-    public Activities getActivities() {
-        return activities;
+    public Operations getOperations() {
+        return operations;
     }
 
-    public void setActivities(Activities activities) {
-        this.activities = activities;
+    public void setOperations(Operations operations) {
+        this.operations = operations;
+        
     }
     
 }

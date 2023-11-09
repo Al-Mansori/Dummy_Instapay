@@ -8,6 +8,8 @@ package dummy.instapay;
  *
  * @author Medo
  */
-public abstract class Operations {
-    public abstract void transfer(String accountNumber , Account accountFrom , double balance);
+public class WalletOperations extends Operations {
+    public void transfer(String accountNumber , Account accountFrom , double balance){
+        
+    }
 }
