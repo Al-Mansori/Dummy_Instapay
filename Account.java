@@ -42,9 +42,7 @@ public abstract class Account {
         return operations;
     }
 
-    public void setOperations(Operations operations) {
-        this.operations = operations;
-    }
+    public abstract void setOperations(Operations operations) ;
     
     public abstract void loadProfile();
 }

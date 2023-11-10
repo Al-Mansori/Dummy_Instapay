@@ -19,6 +19,11 @@ public class Wallet extends Account{
     }
     
     @Override
+    public void setOperations(Operations operation){
+    
+    }
+    
+    @Override
     public void loadProfile(){
         System.out.println("Account ID: "+this.id+"\nBalance: "+this.balance);
     }

@@ -21,6 +21,11 @@ public class BankAccount extends Account{
         this.accountNumber = accountNumber;
     }
     
+    @Override
+    public void setOperations(Operations operation){
+        this.operations = operations ;
+    }
+    
     public String getAccountNumber() {
         return accountNumber;
     }
