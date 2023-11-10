@@ -13,8 +13,6 @@ public abstract class Account {
     protected String id ;
     protected Operations operations ;
     
-    public abstract void loadProfile();
-    
     public Account(){
         
     }
@@ -48,4 +46,5 @@ public abstract class Account {
         this.operations = operations;
     }
     
+    public abstract void loadProfile();
 }

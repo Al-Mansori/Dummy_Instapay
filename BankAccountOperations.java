@@ -12,30 +12,36 @@ public class BankAccountOperations extends Operations {
     
     @Override
     public void transfer(String accountNumber , Account accountFrom , double balance){
-        if(!Verifications.isFoundBankID(accountNumber)){
-            System.out.println("Error: invalid bank account");
+        if(!Verifications.isValidBankAccount(accountNumber)){
+            System.out.println("Error: invalid bank account Note: number must be 11 digit");
         }
         else{
-            if(accountFrom.balance < balance){
-                System.out.println("Error: this amount > your balance");
+            if(!Verifications.isFoundBankID(accountNumber)){
+                System.out.println("Error: invalid bank account");
             }
             else{
-                if(Verifications.isFoundBankAccount(accountNumber)){
-                    for(User user : Verifications.getDb().getUsersList() ){
-                        if(user.getAccount().getID().equals(accountNumber)){
-                            accountFrom.setBalance(accountFrom.getBalance() - balance);
-                            user.getAccount().setBalance(user.getAccount().getBalance() + balance);
-                            System.out.println("transfer successfully");
-                            return ;
-                        }
-                    }
+                if(accountFrom.balance < balance){
+                    System.out.println("Error: this amount > your balance");
                 }
                 else{
-                    accountFrom.setBalance(accountFrom.getBalance() - balance);
-                    System.out.println("transfer successfully");
+                    if(Verifications.isFoundBankAccount(accountNumber)){
+                        for(User user : Verifications.getDb().getUsersList() ){
+                            if(user.getAccount().getID().equals(accountNumber)){
+                                accountFrom.setBalance(accountFrom.getBalance() - balance);
+                                user.getAccount().setBalance(user.getAccount().getBalance() + balance);
+                                System.out.println("transfer successfully");
+                                return ;
+                            }
+                        }
+                    }
+                    else{
+                        accountFrom.setBalance(accountFrom.getBalance() - balance);
+                        System.out.println("transfer successfully");
+                    }
                 }
             }
         }
+            
     }
     
 }
