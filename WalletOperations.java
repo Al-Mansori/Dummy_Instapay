@@ -21,7 +21,7 @@ public class WalletOperations extends Operations {
             else{
                 if(Verifications.isFoundWallet(phoneNumber)){
                     for(User user : Verifications.getDb().getUsersList() ){
-                        if(user.getPhoneNumber().equals(phoneNumber)){
+                        if(user.getAccount().getID().equals(phoneNumber)){
                             accountFrom.setBalance(accountFrom.getBalance() - balance);
                             user.getAccount().setBalance(user.getAccount().getBalance() + balance);
                             System.out.println("transfer successfully");

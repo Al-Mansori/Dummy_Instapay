@@ -31,6 +31,6 @@ public class BankAccount extends Account{
     
     @Override
     public void loadProfile(){
-        System.out.println("Balance: "+this.balance+"\nAccount Number: "+this.accountNumber);
+        System.out.println("Account ID: "+this.id+"\nBalance: "+this.balance+"\nAccount Number: "+this.accountNumber);
     }
 }

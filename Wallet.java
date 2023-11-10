@@ -20,6 +20,6 @@ public class Wallet extends Account{
     
     @Override
     public void loadProfile(){
-        System.out.println("Balance: "+this.balance);
+        System.out.println("Account ID: "+this.id+"\nBalance: "+this.balance);
     }
 }

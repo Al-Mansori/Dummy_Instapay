@@ -64,7 +64,7 @@ public class User {
     }
     
     public void loadProfile(){
-        System.out.println("User Information:\nUserName: "+username+"\nPassword: "+password+"\nPhone Number: "+phoneNumber);
+        System.out.println("User Information:\nUserName: "+username+"\nPassword: "+password+"\nPhone Number: "+phoneNumber+"\nAccount Type: "+accountType);
         account.loadProfile();
     }
 
