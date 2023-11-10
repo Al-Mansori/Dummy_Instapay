@@ -16,7 +16,7 @@ public class BankAccountOperations extends Operations {
             System.out.println("Error: invalid bank account Note: number must be 11 digit");
         }
         else{
-            if(!Verifications.isFoundBankID(accountNumber)){
+            if(!BankApi.isFoundBankID(accountNumber)){
                 System.out.println("Error: invalid bank account");
             }
             else{
@@ -24,8 +24,8 @@ public class BankAccountOperations extends Operations {
                     System.out.println("Error: this amount > your balance");
                 }
                 else{
-                    if(Verifications.isFoundBankAccount(accountNumber)){
-                        for(User user : Verifications.getDb().getUsersList() ){
+                    if(UserDB.isFoundBankAccount(accountNumber)){
+                        for(User user : UserDB.getUsersList() ){
                             if(user.getAccount().getID().equals(accountNumber)){
                                 accountFrom.setBalance(accountFrom.getBalance() - balance);
                                 user.getAccount().setBalance(user.getAccount().getBalance() + balance);

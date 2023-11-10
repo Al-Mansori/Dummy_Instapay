@@ -17,13 +17,30 @@ public class UserDB {
         usersList = new Vector<User>();
     }
     
-    public void add(User user){
+    public static void add(User user){
         usersList.add(user);
     }
 
-    public Vector<User> getUsersList() {
+    public static Vector<User> getUsersList() {
         return usersList;
     }
     
+    public static boolean isFoundWallet(String phoneNumber){
+        for(User user : usersList ){
+            if(user.getPhoneNumber().equals(phoneNumber)){
+                return true ;
+            }
+        }
+        return false;
+    }
+    
+    public static boolean isFoundBankAccount(String bankNumber){
+        for(User user : usersList ){
+            if(user.getAccount().getID().equals(bankNumber)){
+                return true ;
+            }
+        }
+        return false;
+    }
     
 }

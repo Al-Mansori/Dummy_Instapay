@@ -19,8 +19,8 @@ public class WalletOperations extends Operations {
                 System.out.println("Error: this amount > your balance");
             }
             else{
-                if(Verifications.isFoundWallet(phoneNumber)){
-                    for(User user : Verifications.getDb().getUsersList() ){
+                if(UserDB.isFoundWallet(phoneNumber)){
+                    for(User user : UserDB.getUsersList() ){
                         if(user.getAccount().getID().equals(phoneNumber)){
                             accountFrom.setBalance(accountFrom.getBalance() - balance);
                             user.getAccount().setBalance(user.getAccount().getBalance() + balance);
