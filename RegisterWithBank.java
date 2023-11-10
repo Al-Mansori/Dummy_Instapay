@@ -8,9 +8,9 @@ public class RegisterWithBank extends Register{
     }
 
     @Override
-    protected User doRegister(String username, String password, String bankNumber) {
+    protected User doRegister(String username, String password, String bankNumber,AccountType type) {
         if (bankAPI.isFoundBankID(bankNumber)){
-            BankAccount bankAccount = new BankAccount();
+            BankAccount bankAccount = new BankAccount(bankNumber,generateBalance(),bankNumber);
 
             User newUser = new User(username, password, bankNumber, AccountType.bankAccount, bankAccount);
             UserDB.add(newUser);
@@ -22,8 +22,5 @@ public class RegisterWithBank extends Register{
         return null;
     }
 
-    @Override
-    protected boolean isValidInput() {
-        return true;
-    }
+
 }
