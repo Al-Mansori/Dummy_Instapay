@@ -42,5 +42,13 @@ public class UserDB {
         }
         return false;
     }
+    public static boolean isUsernameExist(String username){
+        for (User user :UserDB.getUsersList()){
+            if (user.getUsername().equals(username)){
+                return true;
+            }
+        }
+        return false;
+    }
     
 }
