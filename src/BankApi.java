@@ -21,12 +21,21 @@ public class BankApi {
         BankNumbersList.add("34567890123");
     }
     
-    public void add(String bankNumber){
+    public static void add(String bankNumber){
         BankNumbersList.add(bankNumber);
     }
     
-    public Vector<String> getBankNumbersList() {
+    public static Vector<String> getBankNumbersList() {
         return BankNumbersList;
+    }
+    
+    public static boolean isFoundBankID(String bankNumber){
+        for(String bn : BankNumbersList){
+            if(bankNumber.equals(bn)){
+                return true ;
+            }
+        }
+        return false ;
     }
  
 }

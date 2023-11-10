@@ -9,13 +9,6 @@ package dummy.instapay;
  * @author Medo
  */
 public class Verifications {
-    private static UserDB db ;
-    private static BankApi api;
-
-    public Verifications() {
-        db = new UserDB();
-        api = new BankApi();
-    }
     
     public static boolean isValidPhoneNumber(String phoneNumber) {
         if (phoneNumber.length() != 11) {
@@ -44,24 +37,6 @@ public class Verifications {
             return true;
         }
         return false ;
-    }
-    
-    public static boolean isFoundBankID(String bankNumber){
-        for(String bn : api.getBankNumbersList()){
-            if(bankNumber.equals(bn)){
-                return true ;
-            }
-        }
-        return false ;
-    }
-    
-    public static boolean isFoundWallet(String phoneNumber){
-        for(User user : db.getUsersList() ){
-            if(user.getAccount().getPhoneNumber().endsWith(phoneNumber)){
-                return true ;
-            }
-        }
-        return false;
     }
     
 }

@@ -9,5 +9,5 @@ package dummy.instapay;
  * @author Medo
  */
 public abstract class Operations {
-    public abstract void transfer(String accountNumber , Account accountFrom , double balance);
+    public abstract void transfer(String id , Account accountFrom , double balance);
 }

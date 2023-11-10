@@ -19,6 +19,9 @@ public class GazBill extends Bills{
     }
 
     public void setGazCompany() {
+        
+        System.out.println("choose your company: ");
+        
         Scanner scanner = new Scanner(System.in);
 
         String company = scanner.next();
@@ -31,11 +34,6 @@ public class GazBill extends Bills{
         System.out.println("Gaze Consumed: ");
 
         System.out.println(gazeConsumed);
-
-        System.out.println("choose your company: ");
-
-        setGazCompany();
-
 
     }
 

@@ -13,12 +13,16 @@ import java.util.Scanner;
 public class WaterBill extends Bills {
 
     private double waterConsumed;
+    private WaterCompany waterCompany;
 
     public WaterCompany getWaterCompany() {
         return waterCompany;
     }
 
     public void setWaterCompany() {
+        
+        System.out.println("choose your company: ");
+        
         Scanner scanner = new Scanner(System.in);
 
         String company = scanner.next();
@@ -27,7 +31,6 @@ public class WaterBill extends Bills {
 
     }
 
-    private WaterCompany waterCompany;
 
 
 
@@ -36,14 +39,6 @@ public class WaterBill extends Bills {
         System.out.println("Water Consumed: ");
 
         System.out.println(waterConsumed);
-
-        System.out.println("choose your company: ");
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter your company: ");
-
-        setWaterCompany();
 
     }
 }

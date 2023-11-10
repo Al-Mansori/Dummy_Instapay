@@ -14,12 +14,17 @@ public class Wallet extends Account{
         this.operations = new WalletOperations();
     }
 
-    public Wallet(double balance, String phoneNumber, AccountType accountType) {
-        super(balance, phoneNumber, accountType);
+    public Wallet(double balance, String id) {
+        super(balance, id);
+    }
+    
+    @Override
+    public void setOperations(Operations operation){
+    
     }
     
     @Override
     public void loadProfile(){
-        System.out.println("Phone Number: "+this.phoneNumber+"\nBalance: "+this.balance+"\nAccount Type: "+this.accountType);
+        System.out.println("Account ID: "+this.id+"\nBalance: "+this.balance);
     }
 }
