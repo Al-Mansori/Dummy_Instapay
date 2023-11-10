@@ -37,7 +37,7 @@ public class Aoth {
                     AccountType.bankAccount);
 
             User user = new User(userName, userPassword, bankAccount);
-
+            sendOtp();
             return user;
 
         } else if (choice == 2) {
@@ -51,7 +51,7 @@ public class Aoth {
 
             Wallet wallet = new Wallet(initialBalance, userId, phoneNumber, AccountType.wallet);
             User user = new User(userName, userPassword, wallet);
-
+            sendOtp();
             return user;
 
         } else {
@@ -70,13 +70,14 @@ public class Aoth {
         String password = scanner.next();
 
         if (isUserValid(userId, password)) {
-
+            sendOtp();
             return;
 
         } else {
             System.out.println("Login failed. Invalid credentials.");
             return null;
         }
+
     }
 
     private boolean isUserValid(int userId, String phoneNumber) {
@@ -84,6 +85,16 @@ public class Aoth {
         return true;
     }
 
-    public void sendOtp() {
-        return;
+    private void sendOtp() {
+
+        int otp = generateRandomOtp();
+
+        System.out.println("Your OTP is: " + otp);
     }
+
+    private int generateRandomOtp() {
+
+        Random random = new Random();
+        return 100000 + random.nextInt(900000);
+    }
+}
