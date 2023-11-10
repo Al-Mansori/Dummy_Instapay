@@ -20,6 +20,10 @@ public class BankAccount extends Account{
         super(balance, id);
         this.accountNumber = accountNumber;
     }
+    public BankAccount(String accountNumber){
+        this.accountNumber = accountNumber;
+
+    }
     
     @Override
     public void setOperations(Operations operation){

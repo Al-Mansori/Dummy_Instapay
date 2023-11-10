@@ -16,7 +16,7 @@ public class BankAccountOperations extends Operations {
             System.out.println("Error: invalid bank account Note: number must be 11 digit");
         }
         else{
-            if(!BankApi.isFoundBankID(accountNumber)){
+            if(!BankAPI.isFoundBankID(accountNumber)){
                 System.out.println("Error: invalid bank account");
             }
             else{
