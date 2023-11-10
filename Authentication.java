@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Authentication {
     UserDB userDB = new UserDB();
 
-
+    //make it static in DB
     private User findUserByUsername(String username) {
         for (User user : userDB.getUsersList()) {
             if (user.getUsername().equals(username)) {
@@ -25,14 +25,7 @@ public class Authentication {
 
     }
 
-    public User login() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter User ID: ");
-        String username = scanner.next();
-        System.out.print("Enter User Password: ");
-        String password = scanner.next();
+    public User login(String username,String password) {
 
         if (isMatches(username, password)) {
             System.out.println("Login successful!");
