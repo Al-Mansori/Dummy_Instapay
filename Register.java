@@ -4,6 +4,7 @@ import java.util.Random;
 
 public abstract class Register {
     public User register(String username, String password, String id,AccountType type) {
+        // i think we should delete !
         if (!UserDB.isUsernameExist(username)) {
             return doRegister(username, password, id,type);
         } else {
