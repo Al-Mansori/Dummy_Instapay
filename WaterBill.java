@@ -12,14 +12,14 @@ import java.util.Scanner;
 
 public class WaterBill extends Bills {
 
-    private double waterConsumed;
     private WaterCompany waterCompany;
-
+    
     public WaterCompany getWaterCompany() {
         return waterCompany;
     }
 
-    public void setWaterCompany() {
+    @Override
+    protected void setCompany() {
         
         System.out.println("choose your company: ");
         
@@ -31,14 +31,13 @@ public class WaterBill extends Bills {
 
     }
 
-
-
-
     @Override
     public void displayBill() {
+        System.out.println("Company "+waterCompany.name());
+        
         System.out.println("Water Consumed: ");
 
-        System.out.println(waterConsumed);
+        System.out.println(this.totalConsumed);
 
     }
 }

@@ -11,14 +11,14 @@ package dummy.instapay;
 import java.util.Scanner;
 
 public class GazBill extends Bills{
-    private double gazeConsumed;
     private GazCompany gazCompany;
 
     public GazCompany getGazCompany() {
         return gazCompany;
     }
 
-    public void setGazCompany() {
+    @Override
+    protected void setCompany() {
         
         System.out.println("choose your company: ");
         
@@ -31,9 +31,11 @@ public class GazBill extends Bills{
 
     @Override
     public void displayBill() {
+        System.out.println("Company "+gazCompany.name());
+        
         System.out.println("Gaze Consumed: ");
 
-        System.out.println(gazeConsumed);
+        System.out.println(this.totalConsumed);
 
     }
 

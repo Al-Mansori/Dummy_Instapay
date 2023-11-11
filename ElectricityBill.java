@@ -11,14 +11,14 @@ package dummy.instapay;
 import java.util.Scanner;
 
 public class ElectricityBill extends Bills{
-    private double elecConsumed;
     private ElecCompany elecCompany;
 
-    public  ElecCompany getElecCompany() {
-        return elecCompany;
+    public ElectricityBill() {
+        super();
     }
 
-    public void setElecCompany() {
+    @Override
+    protected void setCompany() {
         System.out.println("choose your company: ");
         
         Scanner scanner = new Scanner(System.in);
@@ -31,9 +31,11 @@ public class ElectricityBill extends Bills{
 
     @Override
     public void displayBill() {
+        System.out.println("Company "+elecCompany.name());
+        
         System.out.println("Electricity Consumed: ");
 
-        System.out.println(elecConsumed);
+        System.out.println(this.totalConsumed);
 
     }
 }
