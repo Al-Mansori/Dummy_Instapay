@@ -3,10 +3,10 @@ package dummy.instapay;
 import java.util.Scanner;
 
 public class Authentication {
-    UserDB userDB = new UserDB();
+    UserDB userDB = new UserDB(); // should be deleted
 
-
-    private User findUserByUsername(String username) {
+    // should be deleted
+    private User findUserByUsername(String username) { 
         for (User user : userDB.getUsersList()) {
             if (user.getUsername().equals(username)) {
                 return user;
