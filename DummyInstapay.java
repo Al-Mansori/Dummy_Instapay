@@ -14,7 +14,11 @@ public class DummyInstapay {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        system sys = new system();
+        while(true){
+            sys.userUI(sys.mainUI());
+        }
+        
     }
     
 }

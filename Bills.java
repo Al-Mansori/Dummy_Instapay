@@ -28,7 +28,7 @@ public abstract class Bills {
         }
     }
     
-    private static Bills chooseBillType(){
+    public static Bills chooseBillType(){
         Scanner input = new Scanner(System.in);
         System.out.println("\n1.Electricity Bill\n2.Water Bill\n3.Gas Bill\nWhich bill you want to pay (Note: Enter bill number): ");
         int x = input.nextInt();

@@ -12,14 +12,12 @@ public class User {
     private String username ;
     private String password ;
     private String phoneNumber ;
-    private AccountType accountType ;
     private Account account ;
 
-    public User(String username, String password, String phoneNumber, AccountType accountType, Account account) {
+    public User(String username, String password, String phoneNumber, Account account) {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.accountType = accountType;
         this.account = account;
     }
     
@@ -47,14 +45,6 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public AccountType getAccountType() {
-        return accountType;
-    }
-
-    public void setAccountType(AccountType accountType) {
-        this.accountType = accountType;
-    }
-    
     public Account getAccount() {
         return account;
     }
@@ -63,9 +53,4 @@ public class User {
         this.account = account;
     }
     
-    public void loadProfile(){
-        System.out.println("User Information:\nUserName: "+username+"\nPassword: "+password+"\nPhone Number: "+phoneNumber+"\nAccount Type: "+accountType);
-        account.loadProfile();
-    }
-
 }

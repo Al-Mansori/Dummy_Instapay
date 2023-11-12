@@ -17,16 +17,10 @@ public class Wallet extends Account{
     public Wallet(double balance, String id) {
         super(balance, id);
     }
-
-
     
     @Override
     public void setOperations(Operations operation){
     
     }
     
-    @Override
-    public void loadProfile(){
-        System.out.println("Account ID: "+this.id+"\nBalance: "+this.balance);
-    }
 }

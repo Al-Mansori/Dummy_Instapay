@@ -44,5 +44,4 @@ public abstract class Account {
 
     public abstract void setOperations(Operations operations) ;
     
-    public abstract void loadProfile();
 }
