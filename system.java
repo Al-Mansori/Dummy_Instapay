@@ -126,8 +126,7 @@ public class system {
                         String phoneNumber = input.next();
                         System.out.print("enter balance to transfer: ");
                         double balance = input.nextDouble();
-                        WalletOperations wo =new WalletOperations();
-                        user.getAccount().setOperations(wo);
+                        user.getAccount().setOperations(new WalletOperations());
                         user.getAccount().getOperations().transfer(phoneNumber, user.getAccount(), balance);
                     }
                     else if(x == 2){
@@ -135,8 +134,7 @@ public class system {
                         String bankNumber = input.next();
                         System.out.print("enter balance to transfer: ");
                         double balance = input.nextDouble();
-//                        BankAccountOperations bao = new BankAccountOperations() ;
-//                        user.getAccount().setOperations(bao);
+                        user.getAccount().setOperations(new BankAccountOperations());
                         user.getAccount().getOperations().transfer(bankNumber, user.getAccount(), balance);
                     }
                     else if(x == 3){

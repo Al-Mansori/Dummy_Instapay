@@ -19,11 +19,12 @@ public class BankAccount extends Account{
     public BankAccount(String accountNumber, double balance,  String id) {
         super(balance, id);
         this.accountNumber = accountNumber;
+        this.operations = new BankAccountOperations();
     }
     
     @Override
     public void setOperations(Operations operation){
-        this.operations = operations ;
+        this.operations = operation ;
     }
     
     public String getAccountNumber() {

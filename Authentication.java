@@ -14,6 +14,14 @@ import java.util.Scanner;
 public class Authentication {
     private Register register ;
 
+    public Authentication(){
+        
+    }
+    
+    public Authentication(Register register) {
+        this.register = register;
+    }
+  
     public Register getRegister() {
         return register;
     }

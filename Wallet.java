@@ -16,6 +16,7 @@ public class Wallet extends Account{
 
     public Wallet(double balance, String id) {
         super(balance, id);
+        this.operations = new WalletOperations();
     }
     
     @Override
