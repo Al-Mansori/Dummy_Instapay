@@ -141,6 +141,7 @@ public class system {
                     else if(x == 4){
                         Bills bill = Bills.chooseBillType();
                         if(bill != null){
+                            bill.setCompany();
                             bill.displayBill();
                             System.out.print("do you want to pay (y or n): ");
                             char answer = input.next().charAt(0);
@@ -174,12 +175,14 @@ public class system {
                     }
                     else if(x == 3){
                         Bills bill = Bills.chooseBillType();
-                        bill.setCompany();
-                        bill.displayBill();
-                        System.out.print("do you want to pay (y or n): ");
-                        char answer = input.next().charAt(0);
-                        if(answer == 'y'){
-                            bill.PayBill(user.getAccount());
+                        if(bill != null){
+                            bill.setCompany();
+                            bill.displayBill();
+                            System.out.print("do you want to pay (y or n): ");
+                            char answer = input.next().charAt(0);
+                            if(answer == 'y'){
+                                bill.PayBill(user.getAccount());
+                            }
                         }
                     }
                     else if(x == 4){
