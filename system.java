@@ -22,9 +22,9 @@ public class system {
         authentication = new Authentication();
     }
     
-    public static double generateBalance(){
+    public static double generateBalance() {
         Random random = new Random();
-        return random.nextInt(1000) + 20;
+        return random.nextDouble() * 4001 + 1000;
     }
     
     public User mainUI(){
@@ -126,7 +126,8 @@ public class system {
                         String phoneNumber = input.next();
                         System.out.print("enter balance to transfer: ");
                         double balance = input.nextDouble();
-                        user.getAccount().setOperations(new WalletOperations());
+                        WalletOperations wo =new WalletOperations();
+                        user.getAccount().setOperations(wo);
                         user.getAccount().getOperations().transfer(phoneNumber, user.getAccount(), balance);
                     }
                     else if(x == 2){
@@ -134,7 +135,8 @@ public class system {
                         String bankNumber = input.next();
                         System.out.print("enter balance to transfer: ");
                         double balance = input.nextDouble();
-                        user.getAccount().setOperations(new BankAccountOperations());
+//                        BankAccountOperations bao = new BankAccountOperations() ;
+//                        user.getAccount().setOperations(bao);
                         user.getAccount().getOperations().transfer(bankNumber, user.getAccount(), balance);
                     }
                     else if(x == 3){
@@ -142,11 +144,13 @@ public class system {
                     }
                     else if(x == 4){
                         Bills bill = Bills.chooseBillType();
-                        bill.displayBill();
-                        System.out.println("do you want to pay (y or n): ");
-                        char answer = input.next().charAt(0);
-                        if(answer == 'y'){
-                            bill.PayBill(user.getAccount());
+                        if(bill != null){
+                            bill.displayBill();
+                            System.out.print("do you want to pay (y or n): ");
+                            char answer = input.next().charAt(0);
+                            if(answer == 'y'){
+                                bill.PayBill(user.getAccount());
+                            }
                         }
                     }
                     else if(x == 5){
@@ -174,8 +178,9 @@ public class system {
                     }
                     else if(x == 3){
                         Bills bill = Bills.chooseBillType();
+                        bill.setCompany();
                         bill.displayBill();
-                        System.out.println("do you want to pay (y or n): ");
+                        System.out.print("do you want to pay (y or n): ");
                         char answer = input.next().charAt(0);
                         if(answer == 'y'){
                             bill.PayBill(user.getAccount());

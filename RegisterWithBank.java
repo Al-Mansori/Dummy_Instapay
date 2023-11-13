@@ -13,7 +13,7 @@ public class RegisterWithBank extends Register{
     
     @Override
     protected User doRegister(String username, String password, String bankNumber , String phoneNumber) {
-        if (UserDB.isFoundBankAccount(bankNumber)){
+        if (!UserDB.isFoundBankAccount(bankNumber)){
             BankAccount bankAccount = new BankAccount(bankNumber,system.generateBalance(),bankNumber);
             User newUser = new User(username, password, phoneNumber , bankAccount);
             UserDB.add(newUser);
