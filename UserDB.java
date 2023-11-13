@@ -45,7 +45,7 @@ public class UserDB {
     
     public static boolean isFoundWallet(String phoneNumber){
         for(User user : usersList ){
-            if(user.getPhoneNumber().equals(phoneNumber)){
+            if(user.getAccount().getID().equals(phoneNumber)){
                 return true ;
             }
         }
@@ -59,6 +59,16 @@ public class UserDB {
             }
         }
         return false;
+    }
+    
+    public static boolean isMatches(String username, String password) {
+        for (User user : usersList) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+
     }
     
 }

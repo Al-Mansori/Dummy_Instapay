@@ -35,8 +35,7 @@ public class system {
             System.out.print("1.Wallet\n2.Bank Account\nwhich way you want to regiser with: ");
             x = input.nextInt();
             if(x == 1){
-                Register register = new RegisterWithWallet() ;
-                authentication.setRegister(register) ;
+                authentication.setRegister(new RegisterWithWallet()) ;
                 System.out.print("enter your phone number: ");
                 String phoneNumber = input.next();
                 if(Verifications.isValidPhoneNumber(phoneNumber)){
@@ -59,29 +58,28 @@ public class system {
                 return null;
             }
             else if(x == 2){
-                Register register = new RegisterWithBank() ;
-                authentication.setRegister(register) ;
+                authentication.setRegister(new RegisterWithBank()) ;
                 System.out.print("enter your phone number: ");
                 String phoneNumber = input.next();
                 if(Verifications.isValidPhoneNumber(phoneNumber)){
-                    System.out.print("enter your bank number: ");
-                    String bankNumber = input.next();
-                    if(BankApi.isFoundBankID(bankNumber) && Verifications.isValidBankAccount(bankNumber) ){
-                        System.out.print("enter your otp: ");
-                        x = input.nextInt();
-                        if(x == 12345){
-                            System.out.print("enter username: ");
-                            String username = input.next();
-                            System.out.print("enter password : ");
-                            String password = input.next();
-                            return authentication.getRegister().register(username, password, phoneNumber, phoneNumber);
-                        }
-                        else{
-                            System.out.println("invalid otp");
-                        }
+                    System.out.print("enter your otp: ");
+                    x = input.nextInt();
+                    if(x == 12345){
+                        System.out.print("enter your bank number: ");
+                        String bankNumber = input.next();
+                        if(BankApi.isFoundBankID(bankNumber) && Verifications.isValidBankAccount(bankNumber) ){
+                                System.out.print("enter username: ");
+                                String username = input.next();
+                                System.out.print("enter password : ");
+                                String password = input.next();
+                                return authentication.getRegister().register(username, password, bankNumber, phoneNumber);
+                            }
+                            else{
+                                System.out.println("invalid bank number");
+                            }
                     }
                     else{
-                        System.out.println("invalid bank number");
+                        System.out.println("invalid otp");
                     }
                 }
                 else{

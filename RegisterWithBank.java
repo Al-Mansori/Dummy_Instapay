@@ -19,7 +19,7 @@ public class RegisterWithBank extends Register{
             UserDB.add(newUser);
             return newUser;
         } else {
-            System.out.println("Registration failed. Invalid or duplicate input.");
+            System.out.println("Registration failed. Invalid or duplicate bank account.");
             return null;
         }
     }

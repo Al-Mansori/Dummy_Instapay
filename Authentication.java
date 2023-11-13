@@ -30,19 +30,9 @@ public class Authentication {
         this.register =  register;
     }
     
-    private boolean isMatches(String username, String password) {
-        for (User user : UserDB.getUsersList()) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                return true;
-            }
-        }
-        return false;
-
-    }
-
     public User login(String username,String password) {
 
-        if (isMatches(username, password)) {
+        if (UserDB.isMatches(username, password)) {
             System.out.println("Login successful!");
             return UserDB.findUserByUsername(username);
 
@@ -52,13 +42,6 @@ public class Authentication {
         }
 
     }
-
-//    public static void sendOtp() {
-//
-//        int otp = generateRandomOtp();
-//
-//        System.out.println("Your OTP is: " + otp);
-//    }
 
     public static int generateRandomOtp() {
         return 12345;
