@@ -10,10 +10,10 @@ import java.util.Vector;
  *
  * @author Medo
  */
-public class BankAPI {
+public class BankApi {
     private static Vector<String> BankNumbersList ;
 
-    public BankAPI(){
+    public BankApi(){
         BankNumbersList = new Vector<String>() ;
         BankNumbersList.add("01234567890");
         BankNumbersList.add("12345678901");
