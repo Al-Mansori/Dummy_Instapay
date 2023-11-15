@@ -19,15 +19,12 @@ public class BankAccount extends Account{
     public BankAccount(String accountNumber, double balance,  String id) {
         super(balance, id);
         this.accountNumber = accountNumber;
-    }
-    public BankAccount(String accountNumber){
-        this.accountNumber = accountNumber;
-
+        this.operations = new BankAccountOperations();
     }
     
     @Override
     public void setOperations(Operations operation){
-        this.operations = operations ;
+        this.operations = operation ;
     }
     
     public String getAccountNumber() {
@@ -38,8 +35,4 @@ public class BankAccount extends Account{
         this.accountNumber = accountNumber;
     }
     
-    @Override
-    public void loadProfile(){
-        System.out.println("Account ID: "+this.id+"\nBalance: "+this.balance+"\nAccount Number: "+this.accountNumber);
-    }
 }
