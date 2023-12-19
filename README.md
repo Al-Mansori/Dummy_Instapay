@@ -49,4 +49,4 @@ This repository contains the source code for an Instapay system implemented in J
 
 
 ## Class Diagram
-![Class Diagram](Class Diagram.jpg)
+<img height="50" src="./Class Diagram.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
