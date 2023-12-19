@@ -1,8 +1,4 @@
-Certainly! If your project is implemented in Java, here's an example of how your ReadMe file might look, tailored for a Java-based application:
-
----
-
-# Instapay System (Java Implementation)
+# Instapay System
 
 ## Overview
 
